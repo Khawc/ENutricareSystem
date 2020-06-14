@@ -2,6 +2,7 @@ package com.fai.ens.entity;
 
 import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Diary")
@@ -21,6 +22,9 @@ public class Diary {
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
+
+    @OneToMany(mappedBy = "diary")
+    private List<DiaryDetail> diaryDetails;
 
     public Diary() {
     }

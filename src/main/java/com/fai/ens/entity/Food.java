@@ -52,8 +52,7 @@ public class Food {
     @Column(name = "Status")
     private Boolean status;
 
-    @OneToMany
-    @JoinColumn(name = "food")
+    @OneToMany(mappedBy = "food")
     private List<DiaryDetail> diaryDetails;
 
     public Food() {
