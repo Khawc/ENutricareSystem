@@ -13,7 +13,7 @@ public class HomeController {
     @RequestMapping("/")
     public String home(){
         userRepository.findAll();
-        return "index";
+        return "views/index";
     }
     @RequestMapping("/test")
     public String test(){
@@ -22,6 +22,6 @@ public class HomeController {
         user.setFirstName("sdfsdf");
         user.setLastName("sdfsdf");
         userRepository.save(user);
-        return "index";
+        return "";
     }
 }

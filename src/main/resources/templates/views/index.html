@@ -1,14 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: USER
-  Date: 6/14/2020
-  Time: 12:39 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,25 +10,25 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,700|Quicksand:300,400,700" rel="stylesheet">
 
     <!-- themify icon -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/themify-icons.css" rel="stylesheet">
+    <link th:href="@{/css/themify-icons.css}" rel="stylesheet">
 
     <!-- animate -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/animate.css" rel="stylesheet">
+    <link  th:href="@{/css/animate.css}"  rel="stylesheet">
 
     <!-- meanmenu -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/meanmenu.min.css" rel="stylesheet">
+    <link th:href="@{/css/meanmenu.min.css} "  rel="stylesheet">
 
     <!-- bootstrap -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}"  rel="stylesheet">
 
     <!-- carousel -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link th:href="@{/css/owl.carousel.min.css}" rel="stylesheet">
 
     <!-- fevicon-->
-    <link rel="shortcut icon" type="image/png" href="${pageContext.request.getContextPath()}/assets/images/fevicon.png">
+    <link th:href="@{/images/fevicon.png}" rel="shortcut icon" type="image/png" >
 
     <!-- style -->
-    <link href="${pageContext.request.getContextPath()}/assets/css/style.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
 <div class="home1">
@@ -50,7 +41,7 @@
                 <div class="col-lg-2 col-md-2 col-sm-2">
                     <div class="header_logo">
                         <a href="index.html">
-                            <img src="${pageContext.request.getContextPath()}/assets/images/head-logo.png" alt="logo">
+                            <img th:src="@{/images/head-logo.png}" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -116,7 +107,7 @@
                     <div class="col-xs-12">
                         <div class="mobile_mean_logo">
                             <a href="index.html">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/head-logo.png" alt="">
+                                <img th:src="@{/images/head-logo.png}" alt="">
                             </a>
                         </div>
                         <div class="mobile_mean_menu">
@@ -214,7 +205,7 @@
                                     <p class="animated">Aliquip ex ea commodo consequat. Duis autem iriure dolor
                                         in hendrerit in vulputate velit essequat.</p>
                                     <a href="" class="animated">
-                                        <img src="${pageContext.request.getContextPath()}/assets/images/link-bg.png" alt="link">
+                                        <img th:src="@{/images/link-bg.png}" alt="link">
                                         <span>Get a free consultation</span>
                                     </a>
                                 </div>
@@ -223,7 +214,7 @@
                     </div>
                 </div>
                 <div class="banner_bg animated">
-                    <img src="${pageContext.request.getContextPath()}/assets/images/banner.jpg" alt="img">
+                    <img th:src="@{/images/banner.jpg}" alt="img">
                 </div>
             </div>
             <div class="single_slider">
@@ -237,7 +228,7 @@
                                     <p class="animated">Aliquip ex ea commodo consequat. Duis autem iriure dolor
                                         in hendrerit in vulputate velit essequat.</p>
                                     <a href="" class="animated">
-                                        <img src="${pageContext.request.getContextPath()}/assets/images/link-bg.png" alt="link">
+                                        <img th:src="@{/images/link-bg.png}" alt="link">
                                         <span>Get a free consultation</span>
                                     </a>
                                 </div>
@@ -246,7 +237,7 @@
                     </div>
                 </div>
                 <div class="banner_bg animated">
-                    <img src="${pageContext.request.getContextPath()}/assets/images/banner.jpg" alt="img">
+                    <img th:src="@{/images/banner.jpg}" alt="img">
                 </div>
             </div>
         </div>
@@ -326,7 +317,7 @@
                     <div class="ht_reciepe_slider owl-carousel">
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/one.png" alt="reciepe">
+                                <img th:src="@{/images/one.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -340,7 +331,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/two.png" alt="reciepe">
+                                <img th:src="@{/images/two.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -354,7 +345,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/three.png" alt="reciepe">
+                                <img th:src="@{/images/three.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -368,7 +359,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/four.png" alt="reciepe">
+                                <img th:src="@{/images/four.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -382,7 +373,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/one.png" alt="reciepe">
+                                <img th:src="@{/images/one.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -396,7 +387,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/two.png" alt="reciepe">
+                                <img th:src="@{/images/two.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -410,7 +401,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/three.png" alt="reciepe">
+                                <img th:src="@{/images/three.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -424,7 +415,7 @@
                         </div>
                         <div class="single_reciepe">
                             <div class="sn_reciepe_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/four.png" alt="reciepe">
+                                <img th:src="@{/images/four.png}" alt="reciepe">
                             </div>
                             <div class="sn_reciepe_title">
                                 <a href="healthy-reciepe.html">
@@ -481,7 +472,7 @@
 
                                 </div>
                                 <button>
-                                    <img src="${pageContext.request.getContextPath()}/assets/images/cal-link-bg.png" alt="link">
+                                    <img th:src="@{/images/cal-link-bg.png}" alt="link">
                                     <span>calculate</span>
                                 </button>
                             </div>
@@ -508,7 +499,7 @@
                     <div class="nutrotionist_slider owl-carousel">
                         <div class="single_nutrotionist">
                             <div class="nutrotionist_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/nutrotionist.jpg" alt="">
+                                <img th:src="@{/images/nutrotionist.jpg}" alt="">
                             </div>
                             <div class="nutrotionist_detail">
                                 <div class="nutritionist_name">
@@ -538,7 +529,7 @@
                         </div>
                         <div class="single_nutrotionist">
                             <div class="nutrotionist_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/nutrotionist-two.jpg" alt="">
+                                <img th:src="@{/images/nutrotionist-two.jpg}" alt="">
                             </div>
                             <div class="nutrotionist_detail">
                                 <div class="nutritionist_name">
@@ -704,7 +695,7 @@
                     <div class="row single_weightloss">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 img">
                             <div class="wtloss_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/wtloss-one.jpg" alt="wtl-one">
+                                <img th:src="@{/images/wtloss-one.jpg}" alt="wtl-one">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 content">
@@ -733,7 +724,7 @@
                     <div class="row single_weightloss">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 img">
                             <div class="wtloss_img">
-                                <img src="${pageContext.request.getContextPath()}/assets/images/wtloss-two.jpg" alt="wtl-one">
+                                <img th:src="@{/images/wtloss-two.jpg}" alt="wtl-one">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 content">
@@ -778,7 +769,7 @@
                         <div class="widget widget_contact">
                             <div class="widget_logo">
                                 <a href="index.html">
-                                    <img src="${pageContext.request.getContextPath()}/assets/images/head-logo.png" alt="">
+                                    <img th:src="@{/images/head-logo.png}" alt="">
                                 </a>
                             </div>
                             <div class="widget_contact_list">
@@ -823,21 +814,21 @@
     =================================================== -->
 </div>
 <!-- jquery -->
-<script src="${pageContext.request.getContextPath()}/assets/js/jquery-3.2.1.min.js"></script>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
 
 <!-- bootstrap -->
-<script src="${pageContext.request.getContextPath()}/assets/js/bootstrap.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
 
 <!-- bootstrap -->
-<script src="${pageContext.request.getContextPath()}/assets/js/jquery.meanmenu.min.js"></script>
+<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
 
 <!-- bootstrap -->
-<script src="${pageContext.request.getContextPath()}/assets/js/owl.carousel.min.js"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
 
 <!--  Google map api  -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!-- main -->
-<script src="${pageContext.request.getContextPath()}/assets/js/main.js"></script>
+<script th:src="@{/js/main.js}"></script>
 </body>
 </html>
