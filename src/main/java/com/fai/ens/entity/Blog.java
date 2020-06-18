@@ -2,28 +2,32 @@ package com.fai.ens.entity;
 
 import javax.persistence.*;
 import java.time.LocalTime;
-
+import java.util.List;
 @Entity
-@Table(name = "Commment")
-public class Comment {
+@Table(name = "Blog")
+public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "Content")
+    @JoinColumn(name = "Title")
+    private int title;
+    @JoinColumn(name = "Description")
+    private String description;
+    @JoinColumn(name = "Content")
     private String content;
-    @Column(name = "CreateTime")
+    @JoinColumn(name = "CreateTime")
     private LocalTime createTime;
-    @Column(name = "UpdateTime")
+    @JoinColumn(name = "UpdateTime")
     private LocalTime updateTime;
-    @ManyToOne
-    @JoinColumn(name = "PostId")
-    private Post post;
 
     @ManyToOne
     @JoinColumn(name = "AccountId")
     private Account account;
 
-    public Comment() {
+    @OneToMany(mappedBy = "blog")
+    private List<BlogImage> postImages;
+
+    public Blog() {
     }
 
     public int getId() {
@@ -32,6 +36,22 @@ public class Comment {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTitle() {
+        return title;
+    }
+
+    public void setTitle(int title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getContent() {
@@ -58,14 +78,6 @@ public class Comment {
         this.updateTime = updateTime;
     }
 
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
     public Account getAccount() {
         return account;
     }
@@ -73,4 +85,13 @@ public class Comment {
     public void setAccount(Account account) {
         this.account = account;
     }
+
+    public List<BlogImage> getPostImages() {
+        return postImages;
+    }
+
+    public void setPostImages(List<BlogImage> postImages) {
+        this.postImages = postImages;
+    }
+
 }

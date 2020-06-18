@@ -9,15 +9,17 @@ import java.util.List;
 public class Diary {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     @Column(name = "Description")
     private String description;
     @Column(name = "totalCalories")
     private int totalCalories;
-    @Column(name = "CreateDate")
-    private LocalTime createDate;
-    @Column(name = "UpdateDate")
-    private LocalTime updateDate;
+    @Column(name = "TimeLine")
+    private LocalTime timeLine;
+    @Column(name = "CreateTime")
+    private LocalTime creatTime;
+    @Column(name = "updateTime")
+    private LocalTime updateTime;
 
     @ManyToOne
     @JoinColumn(name = "userId")
@@ -29,20 +31,12 @@ public class Diary {
     public Diary() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getDescription() {
@@ -61,19 +55,43 @@ public class Diary {
         this.totalCalories = totalCalories;
     }
 
-    public LocalTime getCreateDate() {
-        return createDate;
+    public User getUser() {
+        return user;
     }
 
-    public void setCreateDate(LocalTime createDate) {
-        this.createDate = createDate;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public LocalTime getUpdateDate() {
-        return updateDate;
+    public List<DiaryDetail> getDiaryDetails() {
+        return diaryDetails;
     }
 
-    public void setUpdateDate(LocalTime updateDate) {
-        this.updateDate = updateDate;
+    public void setDiaryDetails(List<DiaryDetail> diaryDetails) {
+        this.diaryDetails = diaryDetails;
+    }
+
+    public LocalTime getCreatTime() {
+        return creatTime;
+    }
+
+    public void setCreatTime(LocalTime creatTime) {
+        this.creatTime = creatTime;
+    }
+
+    public LocalTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(LocalTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public LocalTime getTimeLine() {
+        return timeLine;
+    }
+
+    public void setTimeLine(LocalTime timeLine) {
+        this.timeLine = timeLine;
     }
 }

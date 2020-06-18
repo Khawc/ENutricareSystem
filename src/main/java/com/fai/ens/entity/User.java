@@ -10,60 +10,49 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column(name = "FirstName")
+    private int id;
+    @Column(name = "FirstName",columnDefinition = "NVARCHAR(50)")
     private String firstName;
-    @Column(name = "LastName")
+    @Column(name = "LastName",columnDefinition = "NVARCHAR(50)")
     private String lastName;
-    @Column(name = "Email")
+    @Column(name = "Email",columnDefinition = "NVARCHAR(250)")
     private String email;
-    @Column(name = "Phone")
+    @Column(name = "Phone",columnDefinition = "NVARCHAR(15)")
     private String phone;
-    @Column(name = "Description")
+    @Column(name = "Description",columnDefinition = "NVARCHAR(1000)")
     private String description;
-    @Column(name = "Address")
+    @Column(name = "Address",columnDefinition = "NVARCHAR(500)")
     private String address;
-    @Column(name = "Job")
+    @Column(name = "Job",columnDefinition = "NVARCHAR(250)")
     private String job;
-    @Column(name = "Certificate")
+    @Column(name = "Certificate",columnDefinition = "NVARCHAR(50)")
     private String certificate;
-    @Column(name = "Heigth")
-    private int heigth;
-    @Column(name = "Weigth")
-    private int weigth;
-    @Column(name = "Gender")
+    @Column(name = "Gender",columnDefinition = "VARCHAR(10)")
     private String gender;
-    @Column(name = "Image")
+    @Column(name = "Image",columnDefinition = "VARCHAR(250)")
     private String image;
     @Column(name = "Birth")
     private LocalDate birth;
-    @Column(name = "Account")
-    private String account;
-    @Column(name = "Password")
-    private String password;
-    @Column(name = "Role")
-    private String role;
-    @Column(name = "Status")
-    private Boolean status;
     @Column(name = "CreateTime")
     private LocalTime createTime;
     @Column(name = "UpdateTime")
     private LocalTime updateTime;
 
-    @OneToMany(mappedBy = "user")
-    private List<Post> posts;
+    @OneToOne
+    @JoinColumn(name = "accountId")
+    private Account account;
 
     @OneToMany(mappedBy = "user")
-    private List<Comment> comment;
+    private List<BodyInfo> bodyInfos;
 
     public User() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -99,6 +88,14 @@ public class User {
         this.phone = phone;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -107,20 +104,20 @@ public class User {
         this.address = address;
     }
 
-    public int getHeigth() {
-        return heigth;
+    public String getJob() {
+        return job;
     }
 
-    public void setHeigth(int heigth) {
-        this.heigth = heigth;
+    public void setJob(String job) {
+        this.job = job;
     }
 
-    public int getWeigth() {
-        return weigth;
+    public String getCertificate() {
+        return certificate;
     }
 
-    public void setWeigth(int weigth) {
-        this.weigth = weigth;
+    public void setCertificate(String certificate) {
+        this.certificate = certificate;
     }
 
     public String getGender() {
@@ -147,38 +144,6 @@ public class User {
         this.birth = birth;
     }
 
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     public LocalTime getCreateTime() {
         return createTime;
     }
@@ -195,27 +160,19 @@ public class User {
         this.updateTime = updateTime;
     }
 
-    public String getDescription() {
-        return description;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
-    public String getJob() {
-        return job;
+    public List<BodyInfo> getBodyInfos() {
+        return bodyInfos;
     }
 
-    public void setJob(String job) {
-        this.job = job;
-    }
-
-    public String getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(String certificate) {
-        this.certificate = certificate;
+    public void setBodyInfos(List<BodyInfo> bodyInfos) {
+        this.bodyInfos = bodyInfos;
     }
 }

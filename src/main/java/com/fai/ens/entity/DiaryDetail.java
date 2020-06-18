@@ -9,13 +9,9 @@ import java.time.LocalTime;
 public class DiaryDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     @Column(name = "Quantity")
-    private int quantity;
-    @Column(name = "CreateTime")
-    private LocalTime createTime;
-    @Column(name = "UpdateTime")
-    private LocalTime updateTime;
+    private Double quantity;
     @ManyToOne
     @JoinColumn(name = "DiaryId")
     private Diary diary;
@@ -26,36 +22,20 @@ public class DiaryDetail {
     public DiaryDetail() {
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
-    }
-
-    public LocalTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public LocalTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(LocalTime updateTime) {
-        this.updateTime = updateTime;
     }
 
     public Diary getDiary() {

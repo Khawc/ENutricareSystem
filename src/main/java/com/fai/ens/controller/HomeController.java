@@ -18,7 +18,6 @@ public class HomeController {
     @RequestMapping("/test")
     public String test(){
         User user = new User();
-        user.setAccount("dsfsdf");
         user.setFirstName("sdfsdf");
         user.setLastName("sdfsdf");
         userRepository.save(user);
